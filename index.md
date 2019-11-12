@@ -39,7 +39,7 @@
   </p>
 </video>
 
-# js custom
+# js customm
 
 <video
     id="my-player"
