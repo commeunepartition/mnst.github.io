@@ -1,6 +1,4 @@
-<head>
-<script src="//vjs.zencdn.net/7.3.0/video.min.js"></script>
-  </head>
+
   
 # coucou
 ## coucou
