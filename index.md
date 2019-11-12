@@ -14,6 +14,4 @@
 
 ## image
 
-![alt text](https://mnstllttpssnt.github.io/mnst.github.io/media/arnulfrainer.jpg)
-
 ![loul](https://mnstllttpssnt.github.io/mnst.github.io/media/arnulfrainer.jpg)
