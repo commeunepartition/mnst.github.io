@@ -1,76 +1,113 @@
 <html>
 
-    <head>
+<head>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 
-      <style type="text/css">
+  <style type="text/css">
 
-      html {
-           scroll-behavior: smooth;
-         }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      a {                           /*style des liens*/
-        outline: 0;                 /*pas d'encadrement pointillé*/
-        text-decoration: none;      /*pas de soulignement*/
-      }
+    /*style des liens visités*/
+    a:visited {
+      color: black
+    }
 
-      a:visited {                   /*style des liens visités*/
-        color: black                /*reste noir*/
-      }
+    /* main collé à droite et prend un pourcentage de la largeur*/
+    #main {
+      width: 95%;
+      float: right;
+    }
 
-      a:hover {                     /*style des liens lors du mouseover*/
-        background-color: #E1FF00;
-      }
+    /*hauteur de chaque main*/
+    #main div.target {
+      height: 900px;
+    }
 
-      div.fixed {
-        position: fixed;
-        top: 20;
-      }
+    #nav {
+      width: 25%;
+      position: relative;
+    }
 
-      div.relative {
-        position: relative;
-        left: 100;
-      }
+    #nav nav {
+      position: fixed;
+    }
 
-      #div2 {
-        color: #1B14CC; /*couleur du texte pour div1*/
-      }
-      </style>
+    #nav a {
+      color: #000;
+      display: block;
+      outline: 0;
+      text-decoration: none;
+    }
 
-    </head>
+    #nav a:hover {
+      background-color: #E1FF00;
+    }
 
-    <body>
-        <p>
-          <div class="fixed">  click there : <a href="#div1"> <br> jürgen reble </a> </div>
+    #nav a.active {
+      color: #FF16AA}
 
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <!--well..-->
+    /*blank space at bottom*/
+    p.end {
+      padding-top: 600px;
+    }
+
+  </style>
+
+  <script>
+
+    $('#nav nav a').on('click', function(event) {
+      $(this).parent().find('a').removeClass('active');
+      $(this).addClass('active');
+    });
+
+    $(window).on('scroll', function() {
+      $('.target').each(function() {
+        if($(window).scrollTop() >= $(this).position().top) {
+          var id = $(this).attr('id');
+          $('#nav nav a').removeClass('active');
+          $('#nav nav a[href=#'+ id +']').addClass('active');
+        }
+      });
+    });
+
+  </script>
+
+</head>
 
 
+<body>
 
+  <!--section main : texte/images-->
+  <section id="main">
+      <div class="target" id="1">elt1</div>
+      <div class="target" id="2">arnulf rainer
+        <br><br>
+          <img src="https://mnstllttpssnt.github.io/mnst.github.io/media/arnulfrainer.jpg" style="width:1000x;height:734.3px;"></div>
+      <div class="target" id="3">reble köner
+        <br><br>
+          <iframe src="https://player.vimeo.com/video/6858472" width="1000" height="800" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+      <div class="target" id="4">richter
+        <br><br>
+        <iframe src="https://player.vimeo.com/video/26989328?title=0&byline=0&portrait=0" width="640" height="424" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
 
+      <p class="end">helo! duntmind.me</p>
 
-            <div class="relative">
-              <img src="https://mnstllttpssnt.github.io/mnst.github.io/media/arnulfrainer.jpg" style="width:1000x;height:734.3px;">
-              <br> arnulf rainer
-            </div>
+  </section>
 
-              <div id="div1">
-                <div class="relative">
-                <iframe src="https://player.vimeo.com/video/6858472" width="1000" height="800" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-              </div>
-              <div class="relative">
-              <br> reble köner
+  <!--section nav : liens-->
+  <aside id="nav">
+      <nav>
+          <a href="#1" class="active">link1</a>
+          <a href="#2">link2</a>
+          <a href="#3">link3</a>
+          <a href="#4">link4</a>
+      </nav>
+  </aside>
 
+</body>
 
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-              <!--wellll..-->
-
-            <div id="div2"> helo! duntmind.me </div> </p> <!--change pour la couleur associée à div1-->
-
-    </body>
 
 </html>
