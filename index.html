@@ -1,10 +1,19 @@
 <html>
 
 <head>
-  <script src="https://cdn.jsdelivr.net/gh/mnstllttpssnt/mnst.github.io@master/jquery.js"></script> 
+  <script src="https://cdn.jsdelivr.net/gh/mnstllttpssnt/mnst.github.io@master/jquery.js"></script>
 <script type="text/javascript" src="script.js"></script>
 
   <style type="text/css">
+
+    @font-face {
+      font-family: mainfont;
+      src: url(https://mnstllttpssnt.github.io/mnst.github.io/RobotoCondensed-Regular.ttf);
+    }
+
+    * {
+     font-family: mainfont;
+   }
 
     html {
       scroll-behavior: smooth;
@@ -27,8 +36,10 @@
     }
 
     #nav {
-      width: 25%;
+
       position: relative;
+      top: 20px;
+      left: 10px;
     }
 
     #nav nav {
@@ -43,14 +54,20 @@
     }
 
     #nav a:hover {
-      background-color: #E1FF00;
+      background-color: #C6FF0D;
     }
 
     #nav a.active {
-      color: #FF16AA}
+      color: #6F31E8
+    }
 
+    #titre {
+      margin-top: 20px;
+      margin-bottom: 100px;
+      margin-left: 200px;
+    }
     /*blank space at bottom*/
-    p.end {
+    #end {
       padding-top: 600px;
     }
 
@@ -58,11 +75,13 @@
 
   <script>
 
+    /*highlights current target's link on click*/
     $('#nav nav a').on('click', function(event) {
       $(this).parent().find('a').removeClass('active');
       $(this).addClass('active');
     });
 
+    /*highlights current target's link on scroll*/
     $(window).on('scroll', function() {
       $('.target').each(function() {
         if($(window).scrollTop() >= $(this).position().top) {
@@ -82,6 +101,7 @@
 
   <!--section main : texte/images-->
   <section id="main">
+      <div id="titre">Corpus</div>
       <div class="target" id="1">elt1</div>
       <div class="target" id="2">arnulf rainer
         <br><br>
@@ -93,7 +113,7 @@
         <br><br>
         <iframe src="https://player.vimeo.com/video/26989328?title=0&byline=0&portrait=0" width="640" height="424" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
 
-      <p class="end">helo! duntmind.me</p>
+      <div id="end"></div>
 
   </section>
 
